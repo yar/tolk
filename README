@@ -2,6 +2,8 @@ Tolk is a Rails engine designed to facilitate the translators doing the dirty wo
 
 * Installation & Setup
 
+Prerequisite: ruby 1.8.7 and rails 2.3.5
+
 To install :
 
   $ script/plugin install git://github.com/dhh/tolk.git
