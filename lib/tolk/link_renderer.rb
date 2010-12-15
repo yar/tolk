@@ -1,13 +1,14 @@
 module Tolk
-  class LinkRenderer < WillPaginate::LinkRenderer
+  class LinkRenderer < WillPaginate::ViewHelpers::LinkRenderer
     def to_html
-      links = @options[:page_links] ? windowed_links : []
-      # previous/next buttons
-      links.unshift page_link_or_span(@collection.previous_page, 'disabled prev_page', @options[:previous_label])
-      links.push    page_link_or_span(@collection.next_page,     'disabled next_page', @options[:next_label])
-      
-      html = links.join(@options[:separator])
-      @options[:container] ? @template.content_tag(:div, safe_string(html), html_attributes) : safe_string(html)
+      # links = @options[:page_links] ? windowed_links : []
+      # # previous/next buttons
+      # links.unshift page_link_or_span(@collection.previous_page, 'disabled prev_page', @options[:previous_label])
+      # links.push    page_link_or_span(@collection.next_page,     'disabled next_page', @options[:next_label])
+      # 
+      # html = links.join(@options[:separator])
+      # @options[:container] ? @template.content_tag(:div, safe_string(html), html_attributes) : safe_string(html)
+      super
     end
 
     protected
