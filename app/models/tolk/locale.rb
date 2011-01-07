@@ -47,7 +47,8 @@ module Tolk
       'tr'    => 'Turkish',
       'uk'    => 'Ukrainian',
       'vi'    => 'Vietnamese',
-      'zh'    => 'Chinese'
+      'zh-CN' => 'Chinese (Simplified)',
+      'zh-TW' => 'Chinese (Traditional)'
     }
 
     has_many :phrases, :through => :translations, :class_name => 'Tolk::Phrase'
@@ -103,7 +104,7 @@ module Tolk
         self.special_prefixes.include?(prefix) || self.special_keys.include?(key)
       end
 
-      PLURALIZATION_KEYS = ['zero', 'one', 'two', 'few', 'many', 'other']
+      PLURALIZATION_KEYS = ['none', 'one', 'two', 'few', 'many', 'other']
       def pluralization_data?(data)
         keys = data.keys.map(&:to_s)
         keys.all? {|k| PLURALIZATION_KEYS.include?(k) }
